@@ -11,8 +11,42 @@ body{
 .wrapper{
     width:100vw;
     height:100vh;
-    background-color:rgb(34, 202, 194);
+    background-color:#22cac2;
     display:flex;
     justify-content:center;
     align-items: center;
+}
+.welcome_text{
+    
+    width:400px ;
+}
+.welcome_form input, button{
+    display:block;
+    width:100%;
+}
+.welcome_form input:focus{
+    outline:none;
+}
+.welcome_form  input{
+    margin-bottom:30px;
+    padding:20px 15px;
+    background-color:transparent;
+    border:none;
+    border-bottom:2px solid #fff;
+    color:#fff;
+    text-align:center;
+    font-size:1.5rem;
+}
+.welcome_form button{
+    background-color:#fff;
+    font-size:1rem;
+    padding:20px 0;
+    border:none;
+    border-radius:100px;
+    color:#6f2cec;
+    transition:all 0.3s ease-in;
+    cursor: pointer;
+}
+.welcome_form button:hover{
+    transform:translateY(-5px);
 }
