@@ -58,11 +58,21 @@ function submitform(e) {
 
 }
 let question_counter=0;
+let point=0;
 
 function next(){
+   
+    let user_answer=document.querySelector("li.option.active").innerHTML;
+    if(user_answer==questions[question_counter].answer){
+        point+=10;
+        sessionStorage.setItem("points", point);
+    }
+    if(question_counter==questions.length-1){
+        location.href="end.html";s
+    }
+    
     question_counter++;
     show(question_counter);
-    console.log(question_counter);
 }
 
 function show(count){
@@ -70,7 +80,7 @@ let question=document.getElementById("question_quiz");
 // java script vanila method
 // question.innerHTML="<h2>"+questions[count].question+ "</h2>";
 // javascript ejs method
-question.innerHTML=`<h2>${questions[count].question}</h2>
+question.innerHTML=`<h2>Q${question_counter+1}. ${questions[count].question}</h2>
 
 <ul class="option_group">
 <li class="option">${questions[count].options[0]}</li>
@@ -81,7 +91,6 @@ question.innerHTML=`<h2>${questions[count].question}</h2>
 
 `
  toggleactive();
-console.log(question);
 }
 
 function toggleactive(){
