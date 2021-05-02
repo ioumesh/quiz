@@ -68,7 +68,9 @@ function next(){
         sessionStorage.setItem("points", point);
     }
     if(question_counter==questions.length-1){
-        location.href="end.html";s
+        sessionStorage.setItem("time", `${minutes} minutes and ${seconds} seconds !`);
+        clearInterval(quiz_time);
+        location.href="end.html";
     }
     
     question_counter++;
@@ -105,4 +107,8 @@ for(let i=0; i<toggle.length; i++){
         toggle[i].classList.add("active");
     }
 }
+}
+
+function startagain(){
+    location.href="index.html";
 }
